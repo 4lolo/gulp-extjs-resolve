@@ -70,7 +70,9 @@ module.exports = function (options) {
 		setPath: function () {}
 	});
 		
-	global.Ext.Loader.require(classes);
+	while (classes.length > 0) {
+		global.Ext.Loader.require(classes.shift());
+	}
 
 	while (optionalCount !== global.Ext.Loader.optionalRequires.length) {
 		optionalCount = global.Ext.Loader.optionalRequires.length;
