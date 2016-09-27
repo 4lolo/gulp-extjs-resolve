@@ -1,6 +1,6 @@
 {
   "name": "gulp-extjs-resolve",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Resolves dependencies of provided extjs classes",
   "repository": {
     "type": "git",
