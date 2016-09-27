@@ -1,0 +1,33 @@
+{
+  "name": "gulp-extjs-resolve",
+  "version": "0.0.1",
+  "description": "Resolves dependencies of provided extjs classes",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4lolo/gulp-extjs-resolve.git"
+  },
+  "keywords": [
+    "gulpplugin",
+    "gulp",
+    "resolve",
+    "extjs",
+    "file",
+    "files"
+  ],
+  "author": {
+    "name": "Krzysztof Wójcicki",
+    "email": "krzysztofwojcicki@gmail.com",
+    "url": "http://kwojcicki.pl"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "bugs": {
+    "url": "https://github.com/4lolo/gulp-extjs-resolve/issues"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/4lolo/gulp-extjs-resolve#readme"
+}
