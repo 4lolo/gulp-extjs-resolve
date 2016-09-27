@@ -8,7 +8,8 @@ module.exports = function (options) {
     var classes = options.classes || [],
 		mainFile = options.mainFile || '',
 		paths = options.paths || {},
-		optionalCount = 0;
+		optionalCount = 0,
+		result;
 		
 	global.window = {
 		addEventListener: function () {},
@@ -45,6 +46,9 @@ module.exports = function (options) {
 	global.Ext = global.window.Ext;
 
 	require(mainFile);
+	
+	// FIX
+	clearInterval(global.Ext.Element.collectorThreadId);
 
 	global.Ext.apply(global.Ext.Loader, {
 		syncModeEnabled: true,
@@ -73,5 +77,13 @@ module.exports = function (options) {
 		global.Ext.Loader.require(global.Ext.Loader.optionalRequires);
 	}
 
-	return global.Ext.Loader.history.slice();
+	result = global.Ext.Loader.history.slice();
+	
+	delete global.window;
+	delete global.document;
+	delete global.location;
+	delete global.navigator;
+	delete global.Ext;
+	
+	return result;
 };
