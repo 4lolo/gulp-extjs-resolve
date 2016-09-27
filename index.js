@@ -77,7 +77,9 @@ module.exports = function (options) {
 		global.Ext.Loader.require(global.Ext.Loader.optionalRequires);
 	}
 
-	result = global.Ext.Loader.history.slice();
+	result = global.Ext.Loader.history.map(function (cls) {
+		return global.Ext.Loader.classNameToFilePathMap[cls];
+	});
 	
 	delete global.window;
 	delete global.document;
